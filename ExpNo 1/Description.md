@@ -57,10 +57,7 @@ Step4:Find its Successors Or neighbors and Check whether the node is visited or 
 Step5:If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.
 
 ### Program:
-```
-Developed By:Challa Sandeep
-Reg.No:212221240011
-```
+
 ```
 #import defaultdict
 from collections import defaultdict
