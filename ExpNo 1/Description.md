@@ -1,6 +1,6 @@
-<h1>ExpNo 1 : Implement Depth First Search Traversal of a Graph</h1> 
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+## ExpNo 1 : Implement Depth First Search Traversal of a Graph</h1> 
+### Name:Challa Sandeep
+### Register Number:212221240011
 <H3>Aim:</H3>
 <p> To Implement Depth First Search Traversal of a Graph using Python 3.</p>
 <h3>Theory:</h3>
@@ -45,51 +45,55 @@ Visit node 3
 
 Now, the Stack becomes empty, which means we have visited all the nodes, and our DFS traversal ends.
 
-<h3>Algorithm:</h3>
-<B><ol>
- <li>Construct a Graph with Nodes and Edges</li>
- <li>Depth First Search Uses Stack and Recursion</li>
- <li>Insert a START node to the STACK</li>
- <li>Find its Successors Or neighbors and Check whether the node is visited or not</li>
- <li>If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.</li>
-</ol></B>
+## Algorithm:
+Step1:Construct a Graph with Nodes and Edges.
 
-<hr>
-<h3>Sample Input</h3>
-<hr>
-8 9 <BR>
-A B <BR>
-A C <BR>
-B E <BR>
-C D <BR>
-B D <BR>
-C G <BR>
-D F <BR>
-G F <BR>
-F H <BR>
-<hr>
-<h3>Sample Output</h3>
-<hr>
-['A', 'B', 'E', 'D', 'C', 'G', 'F', 'H']
+Step2:Depth First Search Uses Stack and Recursion.
 
-<hr>
+Step3:Insert a START node to the STACK.
 
-<hr>
-<h3>Sample Input</h3>
-<hr>
-5 5 <BR>
-0 1 <BR>
-0 2 <BR>
-0 3 <BR>
-2 3 <BR>
-2 4 <BR>
-<hr>
-<h3>Sample Output</h3>
-<hr>
-['0', '1', '2', '3', '4']
+Step4:Find its Successors Or neighbors and Check whether the node is visited or not.
 
-<hr>
-<h3>Result:</h3>
-<hr>
-<p>Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.</p>
+Step5:If Not Visited, add it to the STACK. Else Call The Function Again Until No more nodes needs to be visited.
+
+### Program:
+```
+Developed By:Challa Sandeep
+Reg.No:212221240011
+```
+```
+#import defaultdict
+from collections import defaultdict
+def dfs(graph,start,visited,path):
+    path.append(start)
+    visited[start]=True
+    for neighbour in graph[start]:
+        if visited[neighbour]==False:
+            dfs(graph,neighbour,visited,path)
+            visited[neighbour]=True
+    return path
+graph=defaultdict(list)
+n,e=map(int,input().split())
+for i in range(e):
+    u,v=map(str,input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+#print(graph)
+start='A'
+visited=defaultdict(bool)
+path=[]
+traversedpath=dfs(graph,start,visited,path)
+print(traversedpath)
+```
+### Sample Input
+![AI](https://github.com/nithin-popuri7/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/94154780/07427b82-0bbe-45cf-a3e2-b7adb62bc709)
+
+### Sample Output:
+
+
+![AI1](https://github.com/nithin-popuri7/19AI405FUNDAMENTALSOFARTIFICIALINTELLIGENCE/assets/94154780/0b92f6e7-3fbd-492c-8abe-e00153496b89)
+
+
+### Result:
+Thus,a Graph was constructed and implementation of Depth First Search for the same graph was done successfully.
 
